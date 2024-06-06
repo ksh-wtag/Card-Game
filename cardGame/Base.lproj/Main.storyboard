@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cardGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="eHC-21-M6s">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-Rf-LcQ">
+                                <rect key="frame" x="59" y="0.0" width="734" height="372"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hth-05-ZLD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="gsl-Qf-0R4" customClass="CustomCardCellCollectionViewCell" customModule="cardGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wcO-1U-LCj">
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z5w-HY-60n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="h9L-5x-L0r">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="z5w-HY-60n" secondAttribute="bottom" id="3vw-ex-t5P"/>
+                                                <constraint firstAttribute="bottom" secondItem="h9L-5x-L0r" secondAttribute="bottom" id="Eia-es-MCB"/>
+                                                <constraint firstItem="z5w-HY-60n" firstAttribute="leading" secondItem="wcO-1U-LCj" secondAttribute="leading" id="FWO-TD-AzE"/>
+                                                <constraint firstItem="h9L-5x-L0r" firstAttribute="top" secondItem="wcO-1U-LCj" secondAttribute="top" id="GSL-iu-gZm"/>
+                                                <constraint firstItem="z5w-HY-60n" firstAttribute="top" secondItem="wcO-1U-LCj" secondAttribute="top" id="TXJ-Ke-2Vp"/>
+                                                <constraint firstAttribute="trailing" secondItem="h9L-5x-L0r" secondAttribute="trailing" id="nR5-6G-VVT"/>
+                                                <constraint firstAttribute="trailing" secondItem="z5w-HY-60n" secondAttribute="trailing" id="pqK-0D-10e"/>
+                                                <constraint firstItem="h9L-5x-L0r" firstAttribute="leading" secondItem="wcO-1U-LCj" secondAttribute="leading" id="zM6-kk-awm"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="158" height="224"/>
+                                        <connections>
+                                            <outlet property="backImageView" destination="h9L-5x-L0r" id="jJl-Do-bRa"/>
+                                            <outlet property="frontImageView" destination="z5w-HY-60n" id="r86-Or-Qr2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sD5-rJ-ECy"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I5k-nq-LHS"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NSh-Rf-LcQ" secondAttribute="trailing" id="7A5-a8-dJS"/>
+                            <constraint firstAttribute="trailing" secondItem="eHC-21-M6s" secondAttribute="trailing" id="837-Ab-btz"/>
+                            <constraint firstItem="NSh-Rf-LcQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BdQ-e7-VSA"/>
+                            <constraint firstItem="NSh-Rf-LcQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JSM-qX-snU"/>
+                            <constraint firstItem="eHC-21-M6s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pQF-bd-M85"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NSh-Rf-LcQ" secondAttribute="bottom" id="qCC-Sc-gkE"/>
+                            <constraint firstAttribute="bottom" secondItem="eHC-21-M6s" secondAttribute="bottom" id="voq-ih-zQU"/>
+                            <constraint firstItem="eHC-21-M6s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xSR-Fr-KEH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="NSh-Rf-LcQ" id="Zjl-Du-1lm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.69014084507043" y="-34.351145038167935"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="158" height="224"/>
+        <image name="background" width="736" height="414"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
